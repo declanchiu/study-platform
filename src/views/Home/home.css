@@ -1,0 +1,9 @@
+.home-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.home-wrapper span {
+  font-size: 70px;
+  font-weight: 800;
+}

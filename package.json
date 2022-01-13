@@ -1,0 +1,93 @@
+{
+  "name": "coderq_study_platform",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "vite --host",
+    "build": "vite build",
+    "serve": "vite preview",
+    "prepare": "husky install",
+    "release": "standard-version --no-verify",
+    "release:major": "standard-version --release-as major --no-verify",
+    "release:patch": "standard-version --release-as patch --no-verify",
+    "release:first": "standard-version --first-release --no-verify",
+    "test": "jest",
+    "log": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "lint:pretty": "pretty-quick --staged",
+    "lint:lint-staged": "lint-staged",
+    "lint:eslint": "eslint \"src/**/*.{vue,ts,tsx}\" --fix",
+    "lint:stylelint": "stylelint --fix \"**/*.{tsx,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "lodash-es": "^4.17.21",
+    "normalize.css": "^8.0.1",
+    "qs": "^6.10.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.3.2",
+    "@types/qs": "^6.9.7",
+    "@types/react": "^17.0.14",
+    "@types/react-dom": "^17.0.9",
+    "@types/recharts": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.3",
+    "@typescript-eslint/parser": "^4.28.3",
+    "@vitejs/plugin-react-refresh": "^1.3.1",
+    "commitizen": "^4.2.4",
+    "conventional-changelog-cli": "^2.1.1",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-define-config": "^1.0.9",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "history": "^5.0.0",
+    "husky": "^7.0.1",
+    "jest": "^27.0.6",
+    "less": "^4.1.1",
+    "lint-staged": "^12.1.2",
+    "prettier": "^2.3.2",
+    "pretty-quick": "^3.1.1",
+    "react-hooks": "^1.0.1",
+    "standard-version": "^9.3.2",
+    "styled-components": "^5.3.3",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.3.5",
+    "vite": "^2.4.2",
+    "vite-plugin-style-import": "^1.2.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": [
+      "prettier --write--parser json"
+    ],
+    "package.json": [
+      "prettier --write"
+    ],
+    "*.vue": [
+      "eslint --fix",
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "*.{scss,less,style,html}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
+  }
+}
